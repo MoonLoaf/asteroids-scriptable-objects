@@ -19,8 +19,16 @@ namespace Ship
                 // TODO can we bake this into one call?
                 //_healthRef.ApplyChange(-1);
                 //_onHealthChangedEvent.Raise(_healthRef);
-                _healthObservable.ApplyChange(-1);
+                //_healthObservable.ApplyChange(-1);
+                ApplyHealthChange();
             }
+        }
+
+        private void ApplyHealthChange()
+        {
+            _healthRef.ApplyChange(-1);
+            _onHealthChangedEvent.Raise(_healthRef);
+            _healthObservable.ApplyChange(-1);
         }
     }
 }

@@ -3,7 +3,6 @@ using DefaultNamespace.ScriptableEvents;
 using TMPro;
 using UnityEngine;
 using Variables;
-using Variables;
 
 namespace UI
 {
@@ -31,6 +30,7 @@ namespace UI
         private void Start()
         {
             SetHealthText($"Health: {_healthVar.Value}");
+            SetScoreText($"AsteroidsDestroyed: {_asteroidsDestroyed.Value}");
         }
 
         public void OnHealthChanged(IntReference newValue)

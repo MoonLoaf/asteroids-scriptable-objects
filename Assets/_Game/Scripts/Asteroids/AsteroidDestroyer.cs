@@ -4,7 +4,7 @@ using UnityEngine;
 using Variables;
 
 namespace Asteroids
-{
+{[CreateAssetMenu(fileName = "new Asteroid Destroyer", menuName = "ScriptableObjects/Asteroid Destroyer", order = 0)]
     public class AsteroidSet : ScriptableObject
     {
         private Dictionary<int, Asteroid> _asteroids = new Dictionary<int, Asteroid>();
@@ -46,7 +46,7 @@ namespace Asteroids
             
             // Check if big or small
             
-            // if small enough, we Destoy
+            // if small enough, we Destroy
             
             // if it's big, we split it up.
         }
@@ -58,7 +58,7 @@ namespace Asteroids
 
         private void DestroyAsteroid(Asteroid asteroid)
         {
-            //_asteroids.Remove()
+            //_asteroids.Remove();
         }
     }
 }

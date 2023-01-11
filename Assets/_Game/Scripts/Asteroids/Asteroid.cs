@@ -9,6 +9,9 @@ namespace Asteroids
     public class Asteroid : MonoBehaviour
     {
         [SerializeField] private ScriptableEventInt _onAsteroidDestroyed;
+        [SerializeField] private ScriptableEventIntReference _onAsteroidDestroyedRef;
+        [SerializeField] private IntReference _asteroidsDestroyedRef;
+        [SerializeField] private IntObservable _asteroidsDestroyedObservable;
         
         [Header("Config:")]
         [SerializeField] private float _minForce;
@@ -48,6 +51,11 @@ namespace Asteroids
         private void HitByLaser()
         {
             _onAsteroidDestroyed.Raise(_instanceId);
+            
+            _asteroidsDestroyedRef.ApplyChange(+1);
+            _onAsteroidDestroyed.Raise();
+            _asteroidsDestroyedObservable.ApplyChange(+1);
+            
             Destroy(gameObject);
         }
 
@@ -65,6 +73,8 @@ namespace Asteroids
             if (_instanceId == asteroidId)
             {
                 Destroy(gameObject);
+                
+                Debug.Log(_asteroidsDestroyedObservable.Value);
             }
         }
         
