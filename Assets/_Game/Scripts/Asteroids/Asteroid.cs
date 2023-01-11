@@ -40,6 +40,7 @@ namespace Asteroids
         {
             if (string.Equals(other.tag, "Laser"))
             {
+                //TODO remove string based method
                HitByLaser();
             }
         }

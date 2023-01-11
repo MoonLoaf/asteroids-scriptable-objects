@@ -17,6 +17,7 @@ namespace UI
         [Header("Score:")]
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private IntVariable _asteroidsDestroyed;
+        [SerializeField] private ScriptableEventIntReference _onAsteroidDestroyed;
         
         
         [Header("Timer:")]
@@ -45,6 +46,10 @@ namespace UI
         private void SetScoreText(string text)
         {
             _scoreText.text = text;
+        }
+        public void OnAsteroidDestroyed(IntReference newValue)
+        {
+            SetScoreText($"AsteroidsDestroyed: {newValue.GetValue()}");
         }
         
         private void SetTimerText(string text)
