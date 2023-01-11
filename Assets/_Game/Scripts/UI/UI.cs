@@ -3,6 +3,7 @@ using DefaultNamespace.ScriptableEvents;
 using TMPro;
 using UnityEngine;
 using Variables;
+using Variables;
 
 namespace UI
 {
@@ -15,12 +16,16 @@ namespace UI
         
         [Header("Score:")]
         [SerializeField] private TextMeshProUGUI _scoreText;
+        [SerializeField] private IntVariable _asteroidsDestroyed;
+        
         
         [Header("Timer:")]
         [SerializeField] private TextMeshProUGUI _timerText;
+        [SerializeField] private FloatVariable _timePassed;
         
         [Header("Laser:")]
         [SerializeField] private TextMeshProUGUI _laserText;
+        [SerializeField] private IntVariable _lasersFired;
         
         private void Start()
         {

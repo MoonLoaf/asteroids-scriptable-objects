@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Variables;
 
 namespace Asteroids
 {
     public class AsteroidSet : ScriptableObject
     {
         private Dictionary<int, Asteroid> _asteroids = new Dictionary<int, Asteroid>();
+        [SerializeField] private IntVariable _asteroidsDestroyed;
 
         private void Awake()
         {
