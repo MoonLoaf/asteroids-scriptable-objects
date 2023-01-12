@@ -18,30 +18,37 @@ namespace UI
         [SerializeField] private IntVariable _asteroidsDestroyed;
         [SerializeField] private ScriptableEventIntReference _onAsteroidDestroyed;
         
-        
         [Header("Timer:")]
         [SerializeField] private TextMeshProUGUI _timerText;
-        [SerializeField] private FloatVariable _timePassed;
+        [SerializeField] private FloatVariable _timeLeft;
+        [SerializeField] private ScriptableEventFloatReference _onTimePassed;
         
         [Header("Laser:")]
         [SerializeField] private TextMeshProUGUI _laserText;
         [SerializeField] private IntVariable _lasersFired;
+        [SerializeField] private ScriptableEventIntReference _onLaserFired;
         
         private void Start()
         {
             SetHealthText($"Health: {_healthVar.Value}");
-            SetScoreText($"AsteroidsDestroyed: {_asteroidsDestroyed.Value}");
+            SetScoreText($"Asteroids Destroyed: {_asteroidsDestroyed.Value}");
+            SetTimerText($"Time Left: {_timeLeft.Value}");
+            SetLaserText($"Lasers Fired: {_lasersFired.Value}");
+            
         }
 
+        // ------------HEALTH----------------
+        
+        private void SetHealthText(string text)
+        {
+            _healthText.text = text;
+        }
         public void OnHealthChanged(IntReference newValue)
         {
             SetHealthText($"Health: {newValue.GetValue()}");
         }
 
-        private void SetHealthText(string text)
-        {
-            _healthText.text = text;
-        }
+        // ------------SCORE----------------
         
         private void SetScoreText(string text)
         {
@@ -49,17 +56,29 @@ namespace UI
         }
         public void OnAsteroidDestroyed(IntReference newValue)
         {
-            SetScoreText($"AsteroidsDestroyed: {newValue.GetValue()}");
+            SetScoreText($"Asteroids Destroyed: {newValue.GetValue()}");
         }
+        
+        // ------------TIMER----------------
         
         private void SetTimerText(string text)
         {
             _timerText.text = text;
         }
+        public void OnTimePassed(FloatReference newValue)
+        {
+            SetTimerText($"Time Left: {newValue.GetValue()}");
+        }
+        
+        // ------------LASERS----------------
         
         private void SetLaserText(string text)
         {
             _laserText.text = text;
+        }
+        public void OnLaserFired(IntReference newValue)
+        {
+            SetLaserText($"Lasers Fired: {newValue.GetValue()}");
         }
     }
 }

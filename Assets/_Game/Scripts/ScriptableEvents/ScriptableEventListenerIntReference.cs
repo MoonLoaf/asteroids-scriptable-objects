@@ -17,7 +17,7 @@ namespace DefaultNamespace.ScriptableEvents
     }
     
     [Serializable]
-    public class UnityEventGuid : UnityEvent<Guid>
+    public class UnityEventGuidInt : UnityEvent<Guid>
     {
         
     }

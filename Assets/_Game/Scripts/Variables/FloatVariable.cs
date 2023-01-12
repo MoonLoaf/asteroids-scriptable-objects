@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 namespace Variables
 {
@@ -8,6 +7,23 @@ namespace Variables
     {
         [SerializeField] private float _value;
 
-        public float Value => _value;
+        public float Value => _currentValue;
+
+        private float _currentValue;
+        
+        public virtual void ApplyChange(float change)
+        {
+            _currentValue += change;
+        }
+
+        public virtual void SetValue(float newValue)
+        {
+            _currentValue = newValue;
+        }
+
+        private void OnEnable()
+        {
+            _currentValue = _value;
+        }
     }
 }
