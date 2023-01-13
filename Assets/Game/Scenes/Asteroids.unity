@@ -123,6 +123,43 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &243065346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2369577490094637426, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+  m_PrefabInstance: {fileID: 7101966234704262264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &243065348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243065346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b8f09ae7c24da19a15cb1b403ad85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventNoPayload: {fileID: 0}
+  _responseNoPayload:
+    m_PersistentCalls:
+      m_Calls: []
+  _event: {fileID: 11400000, guid: 1fcbede158be01e4191639eceab53649, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1915432783}
+        m_TargetAssemblyTypeName: UI.UI, Assembly-CSharp
+        m_MethodName: OnHealthChanged
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: b7cab70055531b34a893eef9c94f2168, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Variables.IntVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &930979759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,6 +362,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915432783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8597208082757243919, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+  m_PrefabInstance: {fileID: 7101966234704262264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4e0c7004c84bd1bb099cbacaaa8298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2970632032457142644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -334,9 +382,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2970632031999273633, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
+      propertyPath: _health
+      value: 
+      objectReference: {fileID: 11400000, guid: b7cab70055531b34a893eef9c94f2168, type: 2}
+    - target: {fileID: 2970632031999273633, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
       propertyPath: _healthRef._useSimple
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2970632031999273633, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
+      propertyPath: _onHealthChangedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fcbede158be01e4191639eceab53649, type: 2}
     - target: {fileID: 2970632031999273633, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
       propertyPath: _healthRef._simpleValue
       value: 0
@@ -394,6 +450,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2970632031999273638, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
+      propertyPath: _throttlePower
+      value: 
+      objectReference: {fileID: 11400000, guid: 8519be53fb9995e4d93d9332ae484dcc, type: 2}
+    - target: {fileID: 2970632031999273638, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
       propertyPath: _rotationPowerSimple
       value: 5.85
       objectReference: {fileID: 0}
@@ -429,6 +489,10 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
       value: 1.2715299
       objectReference: {fileID: 0}
+    - target: {fileID: 2970632033307266020, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
+      propertyPath: _lasersFired
+      value: 
+      objectReference: {fileID: 11400000, guid: 601065b088680aa4792a9e3ce6ad5c65, type: 2}
     - target: {fileID: 2970632033307266020, guid: ab39a3d0044af1d46b46c0ccbc24f3dd, type: 3}
       propertyPath: _onLaserFiredEvent
       value: 
@@ -546,8 +610,27 @@ PrefabInstance:
       propertyPath: _timePassedObservable
       value: 
       objectReference: {fileID: 11400000, guid: a0ddc579efc1d50448b6d2ad2e012c91, type: 2}
+    - target: {fileID: 8597208082757243919, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+      propertyPath: _timeLeft
+      value: 
+      objectReference: {fileID: 11400000, guid: 6b3f0df50ca9fe8468d18f9b1f9620ed, type: 2}
+    - target: {fileID: 8597208082757243919, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+      propertyPath: _healthVar
+      value: 
+      objectReference: {fileID: 11400000, guid: b7cab70055531b34a893eef9c94f2168, type: 2}
+    - target: {fileID: 8597208082757243919, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+      propertyPath: _asteroidsDestroyed
+      value: 
+      objectReference: {fileID: 11400000, guid: d8672ef8744f64343b5eb9e2d932949b, type: 2}
+    - target: {fileID: 8597208082757243919, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+      propertyPath: _onHealthChangedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fcbede158be01e4191639eceab53649, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2369577490094637426, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 243065348}
   m_SourcePrefab: {fileID: 100100000, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}

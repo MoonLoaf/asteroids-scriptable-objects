@@ -1,5 +1,6 @@
 using System;
-using DefaultNamespace.ScriptableEvents;
+using ScriptableEvents;
+//using DefaultNamespace.ScriptableEvents;
 using UnityEngine;
 using Variables;
 
@@ -12,9 +13,9 @@ namespace Ship
 
         [Space, Header("Variables and Events")] 
         
-        [SerializeField] private ScriptableEventIntReference _onLaserFiredEvent;
-        [SerializeField] private IntReference _lasersFiredRef;
-        [SerializeField] private IntObservable _lasersFiredObservable;
+        [SerializeField] private ScriptableEvent<int> _onLaserFiredEvent;
+        [SerializeField] private IntVariable _lasersFired;
+        //[SerializeField] private IntObservable _lasersFiredObservable;
 
         private void Update()
         {
@@ -31,9 +32,9 @@ namespace Ship
 
         private void ApplyLasersChanged()
         {
-            _lasersFiredRef.ApplyChange(+1);
-            _onLaserFiredEvent.Raise(_lasersFiredRef);
-            _lasersFiredObservable.ApplyChange(+1);
+            _lasersFired.ApplyChange(+1);
+            _onLaserFiredEvent.Raise();
+            // _lasersFiredObservable.ApplyChange(+1);
         }
     }
 }

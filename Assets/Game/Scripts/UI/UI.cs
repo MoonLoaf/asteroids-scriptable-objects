@@ -1,5 +1,5 @@
 ﻿using System;
-using DefaultNamespace.ScriptableEvents;
+using ScriptableEvents;
 using TMPro;
 using UnityEngine;
 using Variables;
@@ -11,22 +11,22 @@ namespace UI
         [Header("Health:")]
         [SerializeField] private IntVariable _healthVar;
         [SerializeField] private TextMeshProUGUI _healthText;
-        [SerializeField] private ScriptableEventIntReference _onHealthChangedEvent;
+        [SerializeField] private ScriptableEvent<int> _onHealthChangedEvent;
         
         [Header("Score:")]
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private IntVariable _asteroidsDestroyed;
-        [SerializeField] private ScriptableEventIntReference _onAsteroidDestroyed;
+        [SerializeField] private ScriptableEvent<int> _onAsteroidDestroyed;
         
         [Header("Timer:")]
         [SerializeField] private TextMeshProUGUI _timerText;
-        [SerializeField] private FloatVariable _timeLeft;
-        [SerializeField] private ScriptableEventFloatReference _onTimePassed;
+        [SerializeField] private IntVariable _timeLeft;
+        [SerializeField] private ScriptableEvent<int> _onTimePassed;
         
         [Header("Laser:")]
         [SerializeField] private TextMeshProUGUI _laserText;
         [SerializeField] private IntVariable _lasersFired;
-        [SerializeField] private ScriptableEventIntReference _onLaserFired;
+        [SerializeField] private ScriptableEvent<int> _onLaserFired;
         
         private void Start()
         {
@@ -43,9 +43,9 @@ namespace UI
         {
             _healthText.text = text;
         }
-        public void OnHealthChanged(IntReference newValue)
+        public void OnHealthChanged(IntVariable newValue)
         {
-            SetHealthText($"Health: {newValue.GetValue()}");
+            SetHealthText($"Health: {newValue.Value}");
         }
 
         // ------------SCORE----------------
@@ -65,7 +65,7 @@ namespace UI
         {
             _timerText.text = text;
         }
-        public void OnTimePassed(FloatReference newValue)
+        public void OnTimePassed(IntReference newValue)
         {
             SetTimerText($"Time Left: {newValue.GetValue()}");
         }
@@ -79,6 +79,11 @@ namespace UI
         public void OnLaserFired(IntReference newValue)
         {
             SetLaserText($"Lasers Fired: {newValue.GetValue()}");
+        }
+
+        private void OnEnable()
+        {
+            //_onHealthChangedEvent.Register();
         }
     }
 }

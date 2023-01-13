@@ -9,10 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 707542950385516110}
-  - component: {fileID: 3812517784591816025}
-  - component: {fileID: 1978097194}
-  - component: {fileID: 5098597739091841503}
-  - component: {fileID: 4408179292846000784}
   m_Layer: 5
   m_Name: EventListener
   m_TagString: Untagged
@@ -40,134 +36,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3812517784591816025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2369577490094637426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cd73ac736c46edab19e2d5035ed8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 0}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls: []
-  _event: {fileID: 11400000, guid: 1c89cb8edd31962449ecaa94187a07fc, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8597208082757243919}
-        m_TargetAssemblyTypeName: UI.UI, Assembly-CSharp
-        m_MethodName: OnHealthChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1978097194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2369577490094637426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cd73ac736c46edab19e2d5035ed8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 0}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls: []
-  _event: {fileID: 11400000, guid: dcd3ff9ba6b437042bfef4e2c15ee445, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8597208082757243919}
-        m_TargetAssemblyTypeName: UI.UI, Assembly-CSharp
-        m_MethodName: OnAsteroidDestroyed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5098597739091841503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2369577490094637426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cd73ac736c46edab19e2d5035ed8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 0}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls: []
-  _event: {fileID: 11400000, guid: 822d6e7743ea3d046bc4bfc4d2f391c4, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8597208082757243919}
-        m_TargetAssemblyTypeName: UI.UI, Assembly-CSharp
-        m_MethodName: OnLaserFired
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4408179292846000784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2369577490094637426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65d463839805c34dbca375184e48cff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 0}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls: []
-  _event: {fileID: 11400000, guid: 6016746cf10d7ed4282e5f4394447aba, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8597208082757243919}
-        m_TargetAssemblyTypeName: UI.UI, Assembly-CSharp
-        m_MethodName: OnTimePassed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &7101966234334493682
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +480,7 @@ RectTransform:
   - {fileID: 3359308803413209657}
   - {fileID: 707542950385516110}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -889,4 +757,4 @@ MonoBehaviour:
     _floatVariable: {fileID: 11400000, guid: 48d67f0cb08bd2948b1ddfdbd2c844a6, type: 2}
     _simpleValue: 0
     _useSimple: 0
-  _timePassedObservable: {fileID: 0}
+  _timePassedObservable: {fileID: 11400000, guid: a0ddc579efc1d50448b6d2ad2e012c91, type: 2}
