@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Resources;
 using ScriptableEvents;
+using TMPro;
 //using DefaultNamespace.ScriptableEvents;
 using UnityEngine;
 using Variables;
@@ -9,18 +11,33 @@ namespace Components.Timer
 {
     public class Timer : MonoBehaviour
     {
+        [Header("Variables and Events")]
         [SerializeField] private ScriptableEvent _onTimePassed;
         [SerializeField] private IntVariable _timeLeft;
+        [SerializeField] private ScriptableEvent _onGameOver;
+        
+        
+        [Header("UI")]
+        [SerializeField] private GameObject _endScreen;
+
+        
 
         private void Start()
         {
             StartCoroutine(RepeatMethod());
         }
 
+        private bool _stopCoroutine = false;
         private IEnumerator RepeatMethod()
         {
-            while (true)
+            while (!_stopCoroutine)
             {
+                if (_timeLeft.CurrentValue == 0)
+                {
+                    _stopCoroutine = true;
+                    _onGameOver.Raise();
+                    yield break;
+                }
                 RemoveSecond();
                 yield return new WaitForSeconds(1);
             }

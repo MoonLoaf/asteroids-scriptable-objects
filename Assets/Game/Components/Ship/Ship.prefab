@@ -51,8 +51,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _throttlePower: {fileID: 11400000, guid: 8519be53fb9995e4d93d9332ae484dcc, type: 2}
   _rotationPower: {fileID: 11400000, guid: 860fb20ce9356a948b4aa2162d910154, type: 2}
-  _throttlePowerSimple: 2.76
-  _rotationPowerSimple: 5.85
 --- !u!114 &2970632031999273633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 11400000, guid: b7cab70055531b34a893eef9c94f2168, type: 2}
   _onHealthChangedEvent: {fileID: 11400000, guid: ebf0d18282bbbb64893e65ff1b5cabd9, type: 2}
+  _onGameOver: {fileID: 11400000, guid: b81e3e6394cd53b41abeeb8c99ec3a86, type: 2}
 --- !u!50 &2970632031999273632
 Rigidbody2D:
   serializedVersion: 4
