@@ -7,12 +7,12 @@ namespace Variables
     {
         public virtual void ApplyChange(int amount)
         {
-            _value += amount;
+            _currentValue += amount;
         }
 
         public virtual void ApplyChange(IntVariable variable)
         {
-            _value += variable.Value;
+            _currentValue += variable.CurrentValue;
         }
     }
 }

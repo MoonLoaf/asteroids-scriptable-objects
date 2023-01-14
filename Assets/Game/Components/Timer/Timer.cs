@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using ScriptableEvents;
 //using DefaultNamespace.ScriptableEvents;
 using UnityEngine;
 using Variables;
@@ -8,9 +9,8 @@ namespace Components.Timer
 {
     public class Timer : MonoBehaviour
     {
-        //[SerializeField] private ScriptableEventFloatReference _onTimePassedEvent;
-        [SerializeField] private FloatReference _timePasssedRef;
-        [SerializeField] private FloatObservable _timePassedObservable;
+        [SerializeField] private ScriptableEvent _onTimePassed;
+        [SerializeField] private IntVariable _timeLeft;
 
         private void Start()
         {
@@ -28,9 +28,8 @@ namespace Components.Timer
 
         private void RemoveSecond()
         {
-            // _timePasssedRef.ApplyChange(-1f);
-            // _onTimePassedEvent.Raise(_timePasssedRef);
-            // _timePassedObservable.ApplyChange(-1);
+            _timeLeft.ApplyChange(-1);
+            _onTimePassed.Raise();
         }
     }
 }

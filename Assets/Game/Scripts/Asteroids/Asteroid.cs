@@ -1,4 +1,6 @@
 //using DefaultNamespace.ScriptableEvents;
+
+using ScriptableEvents;
 using UnityEngine;
 using Variables;
 using Random = UnityEngine.Random;
@@ -8,10 +10,9 @@ namespace Asteroids
     [RequireComponent(typeof(Rigidbody2D))]
     public class Asteroid : MonoBehaviour
     {
-        //[SerializeField] private ScriptableEventInt _onAsteroidDestroyed;
-        //[SerializeField] private ScriptableEventIntReference _onAsteroidDestroyedRef;
-        [SerializeField] private IntReference _asteroidsDestroyedRef;
-        [SerializeField] private IntObservable _asteroidsDestroyedObservable;
+        [SerializeField] private IntVariable _asteroidsDestroyed;
+        [SerializeField] private ScriptableEvent _onAsteroidDestroyed;
+        
         
         [Header("Config:")]
         [SerializeField] private float _minForce;
@@ -50,13 +51,9 @@ namespace Asteroids
 
         private void HitByLaser()
         {
-            // _onAsteroidDestroyed.Raise(_instanceId);
-            //
-            // _asteroidsDestroyedRef.ApplyChange(+1);
-            // _onAsteroidDestroyed.Raise();
-            // _asteroidsDestroyedObservable.ApplyChange(+1);
-            //
-            // Destroy(gameObject);
+            _asteroidsDestroyed.ApplyChange(+1);
+            _onAsteroidDestroyed.Raise();
+            Destroy(gameObject);
         }
 
         // TODO Can we move this to a single listener, something like an AsteroidDestroyer?
@@ -73,8 +70,6 @@ namespace Asteroids
             if (_instanceId == asteroidId)
             {
                 Destroy(gameObject);
-                
-                Debug.Log(_asteroidsDestroyedObservable.Value);
             }
         }
         

@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b775b3c0a6c68c946a99f4e3b18dbe73, type: 3}
-  m_Name: OnHealthChanged
+  m_Name: OnTimePassed
   m_EditorClassIdentifier: 

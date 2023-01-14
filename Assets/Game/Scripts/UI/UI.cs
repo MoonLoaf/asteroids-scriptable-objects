@@ -11,29 +11,29 @@ namespace UI
         [Header("Health:")]
         [SerializeField] private IntVariable _healthVar;
         [SerializeField] private TextMeshProUGUI _healthText;
-        [SerializeField] private ScriptableEvent<int> _onHealthChangedEvent;
+        [SerializeField] private ScriptableEvent _onHealthChangedEvent;
         
         [Header("Score:")]
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private IntVariable _asteroidsDestroyed;
-        [SerializeField] private ScriptableEvent<int> _onAsteroidDestroyed;
+        [SerializeField] private ScriptableEvent _onAsteroidDestroyed;
         
         [Header("Timer:")]
         [SerializeField] private TextMeshProUGUI _timerText;
         [SerializeField] private IntVariable _timeLeft;
-        [SerializeField] private ScriptableEvent<int> _onTimePassed;
+        [SerializeField] private ScriptableEvent _onTimePassed;
         
         [Header("Laser:")]
         [SerializeField] private TextMeshProUGUI _laserText;
         [SerializeField] private IntVariable _lasersFired;
-        [SerializeField] private ScriptableEvent<int> _onLaserFired;
+        [SerializeField] private ScriptableEvent _onLaserFired;
         
         private void Start()
         {
-            SetHealthText($"Health: {_healthVar.Value}");
-            SetScoreText($"Asteroids Destroyed: {_asteroidsDestroyed.Value}");
-            SetTimerText($"Time Left: {_timeLeft.Value}");
-            SetLaserText($"Lasers Fired: {_lasersFired.Value}");
+            SetHealthText($"Health: {_healthVar.CurrentValue}");
+            SetScoreText($"Asteroids Destroyed: {_asteroidsDestroyed.CurrentValue}");
+            SetTimerText($"Time Left: {_timeLeft.CurrentValue}");
+            SetLaserText($"Lasers Fired: {_lasersFired.CurrentValue}");
             
         }
 
@@ -45,7 +45,7 @@ namespace UI
         }
         public void OnHealthChanged(IntVariable newValue)
         {
-            SetHealthText($"Health: {newValue.Value}");
+            SetHealthText($"Health: {newValue.CurrentValue}");
         }
 
         // ------------SCORE----------------
@@ -54,9 +54,9 @@ namespace UI
         {
             _scoreText.text = text;
         }
-        public void OnAsteroidDestroyed(IntReference newValue)
+        public void OnAsteroidDestroyed(IntVariable newValue)
         {
-            SetScoreText($"Asteroids Destroyed: {newValue.GetValue()}");
+            SetScoreText($"Asteroids Destroyed: {newValue.CurrentValue}");
         }
         
         // ------------TIMER----------------
@@ -65,9 +65,9 @@ namespace UI
         {
             _timerText.text = text;
         }
-        public void OnTimePassed(IntReference newValue)
+        public void OnTimePassed(IntVariable newValue)
         {
-            SetTimerText($"Time Left: {newValue.GetValue()}");
+            SetTimerText($"Time Left: {newValue.CurrentValue}");
         }
         
         // ------------LASERS----------------
@@ -76,14 +76,9 @@ namespace UI
         {
             _laserText.text = text;
         }
-        public void OnLaserFired(IntReference newValue)
+        public void OnLaserFired(IntVariable newValue)
         {
-            SetLaserText($"Lasers Fired: {newValue.GetValue()}");
-        }
-
-        private void OnEnable()
-        {
-            //_onHealthChangedEvent.Register();
+            SetLaserText($"Lasers Fired: {newValue.CurrentValue}");
         }
     }
 }

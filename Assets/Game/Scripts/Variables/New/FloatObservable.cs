@@ -35,7 +35,7 @@ namespace Variables
         
         private void Raise()
         {
-            _onValueChanged.Raise(Value);
+            _onValueChanged.Raise(CurrentValue);
         }
 
         public void Register(Action<float> onValueChanged)

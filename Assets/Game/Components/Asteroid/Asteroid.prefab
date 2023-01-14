@@ -46,13 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c14a0b2ceaec4191b684dfd17404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onAsteroidDestroyed: {fileID: 11400000, guid: 6194a1f60d68f9f4da5519ce74b63a58, type: 2}
-  _onAsteroidDestroyedRef: {fileID: 11400000, guid: dcd3ff9ba6b437042bfef4e2c15ee445, type: 2}
-  _asteroidsDestroyedRef:
-    _intVariable: {fileID: 11400000, guid: c2997ec305bc44c4c8689257069b61f3, type: 2}
-    _simpleValue: 0
-    _useSimple: 0
-  _asteroidsDestroyedObservable: {fileID: 11400000, guid: d796cbde74d83d148b2053353e84be3e, type: 2}
+  _asteroidsDestroyed: {fileID: 11400000, guid: d8672ef8744f64343b5eb9e2d932949b, type: 2}
+  _onAsteroidDestroyed: {fileID: 11400000, guid: 795064b90e521a246a3edaf971d56282, type: 2}
   _minForce: 2
   _maxForce: 6
   _minSize: 0.4

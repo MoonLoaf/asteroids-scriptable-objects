@@ -10,32 +10,22 @@ namespace Ship
     public class Hull : MonoBehaviour
     {
         [SerializeField] private IntVariable _health;
-        [SerializeField] private ScriptableEvent<int> _onHealthChangedEvent;
+        [SerializeField] private ScriptableEvent _onHealthChangedEvent;
         
         
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (string.Equals(other.gameObject.tag, "Asteroid"))
             {
-                Debug.Log("Hull collided with Asteroid");
-                ApplyHealthChange();
+                ApplyHealthChange(-1);
             }
         }
 
-        private void ApplyHealthChange()
+        private void ApplyHealthChange(int change)
         {
-            _health.ApplyChange(-1); 
+            Debug.Log("Hull collided with Asteroid");
+            _health.ApplyChange(change); 
             _onHealthChangedEvent.Raise();
-        }
-
-        private void OnEnable()
-        {
-            _onHealthChangedEvent.Register(_health.ApplyChange);
-        }
-
-        private void OnDisable()
-        {
-            _onHealthChangedEvent.Unregister(_health.ApplyChange);
         }
     }
 }

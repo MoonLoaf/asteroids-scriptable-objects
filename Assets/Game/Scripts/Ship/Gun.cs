@@ -13,9 +13,8 @@ namespace Ship
 
         [Space, Header("Variables and Events")] 
         
-        [SerializeField] private ScriptableEvent<int> _onLaserFiredEvent;
+        [SerializeField] private ScriptableEvent _onLaserFiredEvent;
         [SerializeField] private IntVariable _lasersFired;
-        //[SerializeField] private IntObservable _lasersFiredObservable;
 
         private void Update()
         {
@@ -34,7 +33,6 @@ namespace Ship
         {
             _lasersFired.ApplyChange(+1);
             _onLaserFiredEvent.Raise();
-            // _lasersFiredObservable.ApplyChange(+1);
         }
     }
 }

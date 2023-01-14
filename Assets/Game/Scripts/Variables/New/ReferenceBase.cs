@@ -12,7 +12,7 @@ namespace Variables
 
         public T GetValue()
         {
-            return _useConstant ? _constantValue : _variable.Value;
+            return _useConstant ? _constantValue : _variable.CurrentValue;
         }
         
         public virtual void SetValue(T value)
@@ -29,7 +29,7 @@ namespace Variables
         
         public virtual void SetValue(TVariable variable)
         {
-            SetValue(variable.Value);
+            SetValue(variable.CurrentValue);
         }
     }
 }

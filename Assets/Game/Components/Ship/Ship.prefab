@@ -35,7 +35,7 @@ Transform:
   - {fileID: 2970632033307266043}
   - {fileID: 3600351306863385139}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2970632031999273638
 MonoBehaviour:
@@ -49,10 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ca54af3d6ff174994b183b53e8dc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _throttlePower: {fileID: 11400000, guid: 860fb20ce9356a948b4aa2162d910154, type: 2}
+  _throttlePower: {fileID: 11400000, guid: 8519be53fb9995e4d93d9332ae484dcc, type: 2}
   _rotationPower: {fileID: 11400000, guid: 860fb20ce9356a948b4aa2162d910154, type: 2}
-  _throttlePowerSimple: 0
-  _rotationPowerSimple: 0
+  _throttlePowerSimple: 2.76
+  _rotationPowerSimple: 5.85
 --- !u!114 &2970632031999273633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,11 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8049130da1c3b374a8385482151b2e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthRef:
-    _useConstant: 1
-    _constantValue: 0
-    _variable: {fileID: 0}
-  _healthObservable: {fileID: 11400000, guid: a29c193f4c943534ab4728aacaf9839a, type: 2}
+  _health: {fileID: 11400000, guid: b7cab70055531b34a893eef9c94f2168, type: 2}
+  _onHealthChangedEvent: {fileID: 11400000, guid: ebf0d18282bbbb64893e65ff1b5cabd9, type: 2}
 --- !u!50 &2970632031999273632
 Rigidbody2D:
   serializedVersion: 4
@@ -275,11 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laserPrefab: {fileID: 5567069101288871488, guid: 2b9ecba75bf344a41ae8623bcd4fdab6, type: 3}
-  _lasersFiredRef:
-    _useConstant: 1
-    _constantValue: 0
-    _variable: {fileID: 0}
-  _lasersFiredObservable: {fileID: 0}
+  _onLaserFiredEvent: {fileID: 11400000, guid: 8768fcfa55cf04c4184725401107c368, type: 2}
+  _lasersFired: {fileID: 11400000, guid: 601065b088680aa4792a9e3ce6ad5c65, type: 2}
 --- !u!1 &3617658530249206207
 GameObject:
   m_ObjectHideFlags: 0
