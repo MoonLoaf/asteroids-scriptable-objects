@@ -117,7 +117,7 @@ MonoBehaviour:
         m_MethodName: OnLaserFired
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: bb157e6dc3696a44a8fec84c2a357951, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 601065b088680aa4792a9e3ce6ad5c65, type: 2}
           m_ObjectArgumentAssemblyTypeName: Variables.IntVariable, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -596,7 +596,7 @@ RectTransform:
   - {fileID: 3359308803413209657}
   - {fileID: 707542950385516110}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
