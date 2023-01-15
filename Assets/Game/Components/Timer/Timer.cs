@@ -1,13 +1,10 @@
 using System;
 using System.Collections;
-using System.Resources;
 using ScriptableEvents;
-using TMPro;
-//using DefaultNamespace.ScriptableEvents;
 using UnityEngine;
 using Variables;
 
-namespace Components.Timer
+namespace Components
 {
     public class Timer : MonoBehaviour
     {
@@ -16,11 +13,8 @@ namespace Components.Timer
         [SerializeField] private IntVariable _timeLeft;
         [SerializeField] private ScriptableEvent _onGameOver;
         
-        
         [Header("UI")]
         [SerializeField] private GameObject _endScreen;
-
-        
 
         private void Start()
         {

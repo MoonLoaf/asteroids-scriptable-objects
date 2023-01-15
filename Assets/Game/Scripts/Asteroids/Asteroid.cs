@@ -1,5 +1,3 @@
-//using DefaultNamespace.ScriptableEvents;
-
 using ScriptableEvents;
 using UnityEngine;
 using Variables;
@@ -14,14 +12,9 @@ namespace Asteroids
         [SerializeField] private ScriptableEvent _onAsteroidDestroyed;
         
         
-        [Header("Config:")]
-        [SerializeField] private float _minForce;
-        [SerializeField] private float _maxForce;
-        [SerializeField] private float _minSize;
-        [SerializeField] private float _maxSize;
-        [SerializeField] private float _minTorque;
-        [SerializeField] private float _maxTorque;
-
+        [Header("Config:")] 
+        [SerializeField] private AsteroidConfig _config;
+        
         [Header("References:")]
         [SerializeField] private Transform _shape;
 
@@ -44,7 +37,6 @@ namespace Asteroids
         {
             if (string.Equals(other.tag, "Laser"))
             {
-                //TODO remove string based method
                HitByLaser();
             }
         }
@@ -56,7 +48,6 @@ namespace Asteroids
             Destroy(gameObject);
         }
 
-        // TODO Can we move this to a single listener, something like an AsteroidDestroyer?
         public void OnHitByLaser(IntReference asteroidId)
         {
             if (_instanceId == asteroidId.GetValue())
@@ -87,13 +78,13 @@ namespace Asteroids
 
         private void AddForce()
         {
-            var force = Random.Range(_minForce, _maxForce);
+            var force = Random.Range(_config.MinForce, _config.MaxForce);
             _rigidbody.AddForce( _direction * force, ForceMode2D.Impulse);
         }
 
         private void AddTorque()
         {
-            var torque = Random.Range(_minTorque, _maxTorque);
+            var torque = Random.Range(_config.MinTorque, _config.MaxTorque);
             var roll = Random.Range(0, 2);
 
             if (roll == 0)
@@ -104,7 +95,7 @@ namespace Asteroids
 
         private void SetSize()
         {
-            var size = Random.Range(_minSize, _maxSize);
+            var size = Random.Range(_config.MinSize, _config.MaxSize);
             _shape.localScale = new Vector3(size, size, 0f);
         }
     }
