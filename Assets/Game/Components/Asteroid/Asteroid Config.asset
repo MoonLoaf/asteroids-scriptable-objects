@@ -16,7 +16,7 @@ MonoBehaviour:
   MinForce: 2
   MaxForce: 6
   MinSize: 0.4
-  MaxSize: 1.2
+  MaxSize: 1.4
   SizeThreshold: 0.9
   MinTorque: 0.1
   MaxTorque: 0.5

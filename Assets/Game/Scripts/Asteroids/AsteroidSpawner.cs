@@ -8,6 +8,8 @@ namespace Asteroids
     public class AsteroidSpawner : MonoBehaviour
     {
         [SerializeField] private Asteroid _asteroidPrefab;
+        [SerializeField] private AsteroidConfig _smallConfig;
+        
         [SerializeField] private float _minSpawnTime;
         [SerializeField] private float _maxSpawnTime;
         [SerializeField] private int _minAmount;
@@ -73,7 +75,13 @@ namespace Asteroids
 
         public void OnLargeDestroyed(Vector3 onDestroyedPos)
         {
-            Debug.Log(onDestroyedPos.x);
+            for (int i = 0; i < 2; i++)
+            {
+                var splitAsteroid = Instantiate(_asteroidPrefab, onDestroyedPos, Quaternion.identity);
+
+                splitAsteroid.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                splitAsteroid.GetComponent<Asteroid>().IsSplit = true;
+            }
         }
 
         private static SpawnLocation GetSpawnLocation()

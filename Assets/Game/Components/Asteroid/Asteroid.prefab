@@ -46,11 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c14a0b2ceaec4191b684dfd17404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawner: {fileID: 0}
   _asteroidsDestroyed: {fileID: 11400000, guid: d8672ef8744f64343b5eb9e2d932949b, type: 2}
   _onAsteroidDestroyed: {fileID: 11400000, guid: 795064b90e521a246a3edaf971d56282, type: 2}
   _onLagreDestroyed: {fileID: 11400000, guid: ce1c775a49d326d43b307d6c6901dc67, type: 2}
-  _config: {fileID: 11400000, guid: bcbae3e9b45ace448b11982bff490e2d, type: 2}
+  Config: {fileID: 11400000, guid: bcbae3e9b45ace448b11982bff490e2d, type: 2}
   _shape: {fileID: 1524412162417054026}
 --- !u!50 &1784223117350305362
 Rigidbody2D:

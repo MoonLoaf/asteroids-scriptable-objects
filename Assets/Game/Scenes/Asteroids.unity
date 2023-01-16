@@ -436,7 +436,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1217136475}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800090925}
+        m_TargetAssemblyTypeName: EndMenuButtons, Assembly-CSharp
+        m_MethodName: onRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1217136475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,7 +962,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1789541932}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800090925}
+        m_TargetAssemblyTypeName: EndMenuButtons, Assembly-CSharp
+        m_MethodName: onQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1789541932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1800090923}
   - component: {fileID: 1800090924}
+  - component: {fileID: 1800090925}
   m_Layer: 0
   m_Name: EndScreen
   m_TagString: Untagged
@@ -1035,6 +1060,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _asteroidsDestroyed: {fileID: 11400000, guid: d8672ef8744f64343b5eb9e2d932949b, type: 2}
+--- !u!114 &1800090925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800090922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d920fac4b8fb94283a9956dcf351c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867257715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _asteroidPrefab: {fileID: 1784223117350305363, guid: 01106835b2bc0e347a3bb06b7544b51a, type: 3}
+  _smallConfig: {fileID: 0}
   _minSpawnTime: 1
   _maxSpawnTime: 4
   _minAmount: 1

@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using DefaultNamespace.GameEvents;
 using ScriptableEvents;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Asteroids
         
         
         [Header("Config:")] 
-        [SerializeField] private AsteroidConfig _config;
+        public AsteroidConfig Config;
         
         [Header("References:")]
         [SerializeField] private Transform _shape;
@@ -25,6 +26,8 @@ namespace Asteroids
         private Rigidbody2D _rigidbody;
         private Vector3 _direction;
         private int _instanceId;
+
+        [HideInInspector] public bool IsSplit = false;
 
         private void Start()
         {
@@ -41,7 +44,8 @@ namespace Asteroids
         {
             if (string.Equals(other.tag, "Laser"))
             {
-               HitByLaser();
+                Destroy(other.gameObject);
+                HitByLaser();
             }
         }
 
@@ -49,9 +53,10 @@ namespace Asteroids
         {
             _asteroidsDestroyed.ApplyChange(+1);
 
-            if (_shape.localScale.x <= _config.SizeThreshold)
+            if (_shape.localScale.x >= Config.SizeThreshold && !IsSplit)
             {
                 _onLagreDestroyed.Raise(transform.position);
+                Destroy(gameObject);
             }
             else
             {
@@ -74,13 +79,13 @@ namespace Asteroids
 
         private void AddForce()
         {
-            var force = Random.Range(_config.MinForce, _config.MaxForce);
+            var force = Random.Range(Config.MinForce, Config.MaxForce);
             _rigidbody.AddForce( _direction * force, ForceMode2D.Impulse);
         }
 
         private void AddTorque()
         {
-            var torque = Random.Range(_config.MinTorque, _config.MaxTorque);
+            var torque = Random.Range(Config.MinTorque, Config.MaxTorque);
             var roll = Random.Range(0, 2);
 
             if (roll == 0)
@@ -91,7 +96,7 @@ namespace Asteroids
 
         private void SetSize()
         {
-            var size = Random.Range(_config.MinSize, _config.MaxSize);
+            var size = Random.Range(Config.MinSize, Config.MaxSize);
             _shape.localScale = new Vector3(size, size, 0f);
         }
     }
