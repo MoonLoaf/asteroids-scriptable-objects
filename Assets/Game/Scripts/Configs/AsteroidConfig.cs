@@ -17,6 +17,10 @@ public class AsteroidConfig : ScriptableObject
     [Header("Size")]
     public float MinSize;
     public float MaxSize;
+    [Space]
+    [Tooltip("Asteroids larger than this threshold will explode in to smaller asteroids instead of being destroyed")]
+    public float SizeThreshold;
+    
     
     [Header("Torque")]
     public float MinTorque;

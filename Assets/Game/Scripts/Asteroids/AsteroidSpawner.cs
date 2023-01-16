@@ -1,4 +1,5 @@
 ﻿using System;
+using ScriptableEvents;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -68,6 +69,11 @@ namespace Asteroids
                 var position = GetStartPosition(location);
                 Instantiate(_asteroidPrefab, position, Quaternion.identity);
             }
+        }
+
+        public void OnLargeDestroyed(Vector3 onDestroyedPos)
+        {
+            Debug.Log(onDestroyedPos.x);
         }
 
         private static SpawnLocation GetSpawnLocation()

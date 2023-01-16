@@ -1,3 +1,4 @@
+using DefaultNamespace.GameEvents;
 using ScriptableEvents;
 using UnityEngine;
 using Variables;
@@ -10,6 +11,9 @@ namespace Asteroids
     {
         [SerializeField] private IntVariable _asteroidsDestroyed;
         [SerializeField] private ScriptableEvent _onAsteroidDestroyed;
+        //[SerializeField] private ScriptableEvent<Vector3> _onLargeAsteroidDestroyed;
+        [SerializeField] private GameEventVector3 _onLagreDestroyed;
+        
         
         
         [Header("Config:")] 
@@ -44,22 +48,14 @@ namespace Asteroids
         private void HitByLaser()
         {
             _asteroidsDestroyed.ApplyChange(+1);
-            _onAsteroidDestroyed.Raise();
-            Destroy(gameObject);
-        }
 
-        public void OnHitByLaser(IntReference asteroidId)
-        {
-            if (_instanceId == asteroidId.GetValue())
+            if (_shape.localScale.x <= _config.SizeThreshold)
             {
-                Destroy(gameObject);
+                _onLagreDestroyed.Raise(transform.position);
             }
-        }
-        
-        public void OnHitByLaserInt(int asteroidId)
-        {
-            if (_instanceId == asteroidId)
+            else
             {
+                _onAsteroidDestroyed.Raise();
                 Destroy(gameObject);
             }
         }
