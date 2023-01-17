@@ -79,7 +79,9 @@ namespace Asteroids
             {
                 var splitAsteroid = Instantiate(_asteroidPrefab, onDestroyedPos, Quaternion.identity);
 
-                splitAsteroid.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                var size = Random.Range(splitAsteroid.Config.MinSize, splitAsteroid.Config.MaxSize - 0.6f);
+                splitAsteroid.transform.localScale = new Vector3(size, size, 0f);
+                
                 splitAsteroid.GetComponent<Asteroid>().IsSplit = true;
             }
         }

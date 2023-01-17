@@ -6,9 +6,12 @@ using Variables;
 [CreateAssetMenu(fileName = "Asteroid Config", menuName = "Configs/Asteroid Config", order = 0)]
 public class AsteroidConfig : ScriptableObject
 {
-    [Header("Ship Config")]
+    [Header("Asteroid Config")]
     [Header("Damage")]
     public float Damage;
+
+    [Header("Color")] 
+    public Color Color;
     
     [Space] [Header("Force")]
     public float MinForce;
@@ -20,7 +23,6 @@ public class AsteroidConfig : ScriptableObject
     [Space]
     [Tooltip("Asteroids larger than this threshold will explode in to smaller asteroids instead of being destroyed")]
     public float SizeThreshold;
-    
     
     [Header("Torque")]
     public float MinTorque;

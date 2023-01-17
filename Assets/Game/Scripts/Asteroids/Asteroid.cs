@@ -12,8 +12,7 @@ namespace Asteroids
     {
         [SerializeField] private IntVariable _asteroidsDestroyed;
         [SerializeField] private ScriptableEvent _onAsteroidDestroyed;
-        //[SerializeField] private ScriptableEvent<Vector3> _onLargeAsteroidDestroyed;
-        [SerializeField] private GameEventVector3 _onLagreDestroyed;
+        [SerializeField] private GameEventVector3 _onLargeDestroyed;
         
         
         
@@ -26,6 +25,7 @@ namespace Asteroids
         private Rigidbody2D _rigidbody;
         private Vector3 _direction;
         private int _instanceId;
+        private Color _color;
 
         [HideInInspector] public bool IsSplit = false;
 
@@ -33,6 +33,7 @@ namespace Asteroids
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _instanceId = GetInstanceID();
+            GetComponentInChildren<SpriteRenderer>().color = Config.Color;
             
             SetDirection();
             AddForce();
@@ -55,7 +56,7 @@ namespace Asteroids
 
             if (_shape.localScale.x >= Config.SizeThreshold && !IsSplit)
             {
-                _onLagreDestroyed.Raise(transform.position);
+                _onLargeDestroyed.Raise(transform.position);
                 Destroy(gameObject);
             }
             else

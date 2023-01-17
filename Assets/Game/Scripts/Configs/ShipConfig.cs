@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Variables;
 
 namespace DefaultNamespace
 {
