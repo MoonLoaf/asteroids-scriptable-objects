@@ -38,7 +38,7 @@ namespace Ship
             _health.ApplyChange(change); 
             _onHealthChangedEvent.Raise();
 
-            if (_health.CurrentValue == 0)
+            if (_config.Health <= 0)
             {
                 _onGameOver.Raise();
             }
