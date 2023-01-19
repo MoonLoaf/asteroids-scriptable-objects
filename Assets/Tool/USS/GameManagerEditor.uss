@@ -39,10 +39,42 @@
     font-size: 14px;
     -unity-font-style: bold;
     -unity-font: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .unity-color-field {
     font-size: 14px;
     -unity-font-style: bold;
     border-bottom-width: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.unity-foldout {
+    align-self: stretch;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    -unity-font-style: bold-and-italic;
+    font-size: 15px;
+    letter-spacing: 10px;
+    -unity-text-align: middle-left;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    background-color: rgb(42, 42, 42);
+    color: rgb(197, 197, 197);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    white-space: normal;
+    text-overflow: clip;
 }

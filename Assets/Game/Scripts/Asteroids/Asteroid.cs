@@ -41,10 +41,14 @@ namespace Asteroids
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (string.Equals(other.tag, "Laser"))
+            if (string.Equals(other.tag, "Laser") && Config.InvincibleLaser)
             {
-                Destroy(other.gameObject);
                 HitByLaser();
+            }
+            else if (string.Equals(other.tag, "Laser") && !Config.InvincibleLaser)
+            {
+                HitByLaser();
+                Destroy(other);
             }
         }
 

@@ -30,4 +30,8 @@ public class GameConfig : ScriptableObject
 
     public float ThrottleForce;
     public float RotationForce;
+    
+    //Laser Config
+    public float LaserSpeed;
+    public bool InvincibleLaser;
 }

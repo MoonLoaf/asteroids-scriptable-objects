@@ -26,3 +26,5 @@ MonoBehaviour:
   MaxTorque: 0.5
   ThrottleForce: 5.85
   RotationForce: 2.75
+  LaserSpeed: 0.29
+  InvincibleLaser: 0
