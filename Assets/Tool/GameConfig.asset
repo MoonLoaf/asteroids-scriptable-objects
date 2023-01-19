@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01696aa4e2001341ae04d797f2b03b2, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
+  TimeLeft: 90
   Damage: 2
   AsteroidColor: {r: 0.17849922, g: 1, b: 0, a: 1}
   MinForce: 10

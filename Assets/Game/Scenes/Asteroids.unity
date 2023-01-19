@@ -1490,6 +1490,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7167769788413245477, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
+      propertyPath: _config
+      value: 
+      objectReference: {fileID: 11400000, guid: 511db32cd46667547ac096e37696c931, type: 2}
+    - target: {fileID: 7167769788413245477, guid: c71243f12cdfc2a4282f1805a6098327, type: 3}
       propertyPath: _endScreen
       value: 
       objectReference: {fileID: 1800090922}

@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <Style src="project://database/Assets/Tool/USS/GameManagerEditor.uss?fileID=7433441132597879392&amp;guid=733027f9d0945994f868d2cf339f638b&amp;type=3#GameManagerEditor" />
     <ui:VisualElement name="Pane1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
-        <ui:VisualElement name="Game" style="align-self: stretch; justify-content: space-around; align-items: stretch;">
+        <ui:VisualElement name="Game" style="align-self: stretch; justify-content: space-around; align-items: stretch; height: 70px;">
             <ui:Label tabindex="-1" text="Timer Configuration" display-tooltip-when-elided="true" name="Time" class="top-label" style="justify-content: space-around;" />
             <uie:PropertyField binding-path="TimeLeft" label="Timer Start" name="Time" style="height: 24px; width: 352px;" />
         </ui:VisualElement>
