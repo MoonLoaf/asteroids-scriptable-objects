@@ -8,7 +8,6 @@ namespace Asteroids
     public class AsteroidSpawner : MonoBehaviour
     {
         [SerializeField] private Asteroid _asteroidPrefab;
-        [SerializeField] private AsteroidConfig _smallConfig;
         
         [SerializeField] private float _minSpawnTime;
         [SerializeField] private float _maxSpawnTime;

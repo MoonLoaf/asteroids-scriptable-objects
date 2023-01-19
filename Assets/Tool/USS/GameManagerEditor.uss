@@ -29,6 +29,9 @@
     border-bottom-right-radius: 6px;
     height: 35px;
     -unity-font-style: bold;
+    align-items: stretch;
+    justify-content: flex-start;
+    align-self: stretch;
 }
 
 .unity-base-slider {
@@ -36,4 +39,10 @@
     font-size: 14px;
     -unity-font-style: bold;
     -unity-font: none;
+}
+
+.unity-color-field {
+    font-size: 14px;
+    -unity-font-style: bold;
+    border-bottom-width: 0;
 }

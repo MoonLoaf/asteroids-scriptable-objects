@@ -8,6 +8,11 @@ namespace Components
 {
     public class Timer : MonoBehaviour
     {
+        [Header("Config")]
+        [SerializeField] private GameConfig _config;
+
+        
+        
         [Header("Variables and Events")]
         [SerializeField] private ScriptableEvent _onTimePassed;
         [SerializeField] private IntVariable _timeLeft;
@@ -15,6 +20,11 @@ namespace Components
         
         [Header("UI")]
         [SerializeField] private GameObject _endScreen;
+
+        private void OnEnable()
+        {
+            _timeLeft.Set(_config.TimeLeft);
+        }
 
         private void Start()
         {

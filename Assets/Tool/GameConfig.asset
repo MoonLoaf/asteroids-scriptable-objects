@@ -9,15 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ab064ae16f33f46a803c1281c1f810, type: 3}
-  m_Name: Asteroid Config
+  m_Script: {fileID: 11500000, guid: e01696aa4e2001341ae04d797f2b03b2, type: 3}
+  m_Name: GameConfig
   m_EditorClassIdentifier: 
-  Damage: 1
-  Color: {r: 0.76663727, g: 0.8396226, b: 0.32872015, a: 1}
-  MinForce: 2
-  MaxForce: 6
+  Damage: 2
+  AsteroidColor: {r: 0.17849922, g: 1, b: 0, a: 1}
+  MinForce: 10
+  MaxForce: 0.1
   MinSize: 0.4
   MaxSize: 1.4
   SizeThreshold: 0.9
+  ShipColor: {r: 1, g: 0.17174746, b: 0, a: 1}
+  Health: 21
   MinTorque: 0.1
   MaxTorque: 0.5
+  ThrottleForce: 5.85
+  RotationForce: 2.75

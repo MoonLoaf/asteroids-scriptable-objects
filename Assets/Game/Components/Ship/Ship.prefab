@@ -35,7 +35,7 @@ Transform:
   - {fileID: 2970632033307266043}
   - {fileID: 3600351306863385139}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2970632031999273638
 MonoBehaviour:
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ca54af3d6ff174994b183b53e8dc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _config: {fileID: 11400000, guid: 74d34ed54b5717e4990f801f7a47b751, type: 2}
+  _config: {fileID: 11400000, guid: 511db32cd46667547ac096e37696c931, type: 2}
 --- !u!114 &2970632031999273633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8049130da1c3b374a8385482151b2e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 511db32cd46667547ac096e37696c931, type: 2}
   _health: {fileID: 11400000, guid: b7cab70055531b34a893eef9c94f2168, type: 2}
   _onHealthChangedEvent: {fileID: 11400000, guid: ebf0d18282bbbb64893e65ff1b5cabd9, type: 2}
   _onGameOver: {fileID: 11400000, guid: b81e3e6394cd53b41abeeb8c99ec3a86, type: 2}

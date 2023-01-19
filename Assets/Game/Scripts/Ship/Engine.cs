@@ -8,7 +8,7 @@ namespace Ship
     [RequireComponent(typeof(Rigidbody2D))]
     public class Engine : MonoBehaviour
     {
-        [SerializeField] private ShipConfig _config;
+        [SerializeField] private GameConfig _config;
         
         private Rigidbody2D _rigidbody;
         

@@ -17,14 +17,13 @@ namespace Asteroids
         
         
         [Header("Config:")] 
-        public AsteroidConfig Config;
+        public GameConfig Config;
         
         [Header("References:")]
         [SerializeField] private Transform _shape;
 
         private Rigidbody2D _rigidbody;
         private Vector3 _direction;
-        private int _instanceId;
         private Color _color;
 
         [HideInInspector] public bool IsSplit = false;
@@ -32,8 +31,7 @@ namespace Asteroids
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            _instanceId = GetInstanceID();
-            GetComponentInChildren<SpriteRenderer>().color = Config.Color;
+            GetComponentInChildren<SpriteRenderer>().color = Config.AsteroidColor;
             
             SetDirection();
             AddForce();

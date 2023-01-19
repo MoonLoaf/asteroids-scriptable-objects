@@ -1,28 +1,31 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <Style src="project://database/Assets/Tool/USS/GameManagerEditor.uss?fileID=7433441132597879392&amp;guid=733027f9d0945994f868d2cf339f638b&amp;type=3#GameManagerEditor" />
     <ui:VisualElement name="Pane1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Game" style="align-self: stretch; justify-content: space-around; align-items: stretch;">
+            <ui:Label tabindex="-1" text="Timer Configuration" display-tooltip-when-elided="true" name="Time" class="top-label" style="justify-content: space-around;" />
+            <uie:PropertyField binding-path="TimeLeft" label="Timer Start" name="Time" style="height: 24px; width: 352px;" />
+        </ui:VisualElement>
         <ui:VisualElement name="Ship" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 186px; justify-content: space-around;">
             <ui:Label tabindex="-1" text="Ship Configuration" display-tooltip-when-elided="true" name="ShipInfo" class="top-label" />
-            <uie:ObjectField label="Health Variable" type="Variables.IntVariable, Assembly-CSharp" name="HealthVar" />
-            <ui:SliderInt picking-mode="Ignore" label="Health" value="20" high-value="30" name="Health" show-input-field="true" inverted="false" direction="Horizontal" focusable="true" low-value="1" binding-path="Health.CurrentValue" />
-            <uie:ObjectField label="Engine Config" type="DefaultNamespace.ShipConfig, Assembly-CSharp" name="ShipConfig" />
-            <ui:SliderInt picking-mode="Ignore" label="Throttle Power" value="42" high-value="10" name="Throttle" show-input-field="true" low-value="1" />
-            <ui:SliderInt picking-mode="Ignore" label="Rotation Power" value="42" high-value="10" name="Rotation" show-input-field="true" low-value="1" style="height: 20px;" />
+            <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ShipColor" binding-path="ShipColor" style="height: 19px; width: 336px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+            <ui:SliderInt picking-mode="Ignore" label="Health" value="20" high-value="30" name="Health" show-input-field="true" inverted="false" direction="Horizontal" focusable="true" low-value="1" binding-path="Health" />
+            <ui:Slider picking-mode="Ignore" label="Throttle Power" value="10" high-value="100" name="Throttle" binding-path="ThrottleForce" />
+            <ui:Slider picking-mode="Ignore" label="Rotaiton Power" value="10" high-value="100" name="Rotaiton" binding-path="RotationForce" />
         </ui:VisualElement>
         <ui:VisualElement name="Asteroids" class="label" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-items: stretch; justify-content: space-around; align-self: stretch; flex-direction: column; height: 464px;">
             <ui:Label tabindex="-1" text="Asteroid Configuration" display-tooltip-when-elided="true" name="Asteroids" class="top-label" />
-            <uie:ObjectField label="Asteroid Config" type="AsteroidConfig, Assembly-CSharp" name="AsteroidConfig" />
-            <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ColorField" style="height: 22px; width: 336px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
-            <ui:SliderInt picking-mode="Ignore" label="Damage" value="42" high-value="5" name="Damage" show-input-field="true" />
+            <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ColorField" binding-path="AsteroidColor" style="height: 22px; width: 336px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+            <ui:SliderInt picking-mode="Ignore" label="Damage" value="42" high-value="5" name="Damage" show-input-field="true" binding-path="Damage" />
+            <ui:Slider picking-mode="Ignore" label="Size Threshold" value="10" high-value="100" name="Rotaiton" binding-path="SizeThreshold" />
             <ui:Label tabindex="-1" text="Force" display-tooltip-when-elided="true" name="Force" class="label sub-label" style="-unity-text-align: upper-center;" />
-            <ui:Slider picking-mode="Ignore" label="Minimum" value="42" high-value="100" name="Min" show-input-field="true" />
-            <ui:Slider picking-mode="Ignore" label="Maximum" value="42" high-value="100" name="Max" show-input-field="true" />
+            <ui:Slider picking-mode="Ignore" label="Minimum" value="50" high-value="50" name="Min" show-input-field="true" binding-path="MinForce" low-value="0.1" />
+            <ui:Slider picking-mode="Ignore" label="Maximum" value="50" high-value="50" name="Max" show-input-field="true" binding-path="MaxForce" low-value="0.1" />
             <ui:Label tabindex="-1" text="Size" display-tooltip-when-elided="true" name="Size" class="sub-label" style="-unity-text-align: upper-center;" />
-            <ui:Slider picking-mode="Ignore" label="Minimum" value="42" high-value="100" name="Min" show-input-field="true" />
-            <ui:Slider picking-mode="Ignore" label="Maximum" value="42" high-value="100" name="Max" show-input-field="true" />
+            <ui:Slider picking-mode="Ignore" label="Minimum" value="42" high-value="3" name="Min" show-input-field="true" binding-path="MinSize" low-value="0.1" />
+            <ui:Slider picking-mode="Ignore" label="Maximum" value="42" high-value="3" name="Max" show-input-field="true" binding-path="MaxSize" low-value="0.1" />
             <ui:Label tabindex="-1" text="Torque" display-tooltip-when-elided="true" name="Torque" class="sub-label" style="-unity-text-align: upper-center;" />
-            <ui:MinMaxSlider picking-mode="Ignore" label="Min/Max Slider" min-value="0.3" max-value="0.5" low-limit="0.1" high-limit="1" />
+            <ui:Slider picking-mode="Ignore" label="Minimum" value="42" high-value="2" name="Min" show-input-field="true" binding-path="MinTorque" />
+            <ui:Slider picking-mode="Ignore" label="Maximum" value="42" high-value="2" name="Max" show-input-field="true" binding-path="MaxTorque" />
         </ui:VisualElement>
-        <ui:Button text="Apply" display-tooltip-when-elided="true" style="height: 51px; padding-left: 8px; padding-right: 10px; padding-top: 8px; padding-bottom: 8px; margin-left: 5px; margin-right: 5px; margin-top: 10px; margin-bottom: 5px; font-size: 25px; text-shadow: -1.5px 1px 1px rgb(188, 36, 36); background-color: rgb(49, 133, 76); -unity-font-style: bold; letter-spacing: 15px;" />
     </ui:VisualElement>
 </ui:UXML>
