@@ -1101,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1ae38084ec4c29aa5d36b28f72a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 511db32cd46667547ac096e37696c931, type: 2}
   _asteroidPrefab: {fileID: 1784223117350305363, guid: 01106835b2bc0e347a3bb06b7544b51a, type: 3}
   _minSpawnTime: 1
   _maxSpawnTime: 4

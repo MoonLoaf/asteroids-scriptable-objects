@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,4 +35,16 @@ public class GameConfig : ScriptableObject
     //Laser Config
     public float LaserSpeed;
     public bool InvincibleLaser;
+    
+    //Asteroid SpawnDirection
+    public enum SpawnLocation{
+        Any,
+        Top,
+        Bottom,
+        Right,
+        Left
+    }
+
+    public SpawnLocation SpawnLocationActive;
+
 }

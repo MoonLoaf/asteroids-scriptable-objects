@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeLeft: 90
   Damage: 2
-  AsteroidColor: {r: 0.17849922, g: 1, b: 0, a: 1}
+  AsteroidColor: {r: 1, g: 0, b: 0.77281, a: 1}
   MinForce: 10
   MaxForce: 0.1
   MinSize: 0.4
-  MaxSize: 1.4
-  SizeThreshold: 0.9
-  ShipColor: {r: 1, g: 0.17174746, b: 0, a: 1}
+  MaxSize: 2.02
+  SizeThreshold: 0
+  ShipColor: {r: 0.41037738, g: 0.5244708, b: 1, a: 1}
   Health: 21
   MinTorque: 0.1
   MaxTorque: 0.5
@@ -28,3 +28,4 @@ MonoBehaviour:
   RotationForce: 2.75
   LaserSpeed: 0.29
   InvincibleLaser: 0
+  SpawnLocationActive: 0
