@@ -1,6 +1,3 @@
-using System.Buffers;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Game Config", menuName = "Configs/Game Config", order = 0)]
@@ -33,6 +30,7 @@ public class GameConfig : ScriptableObject
     public float RotationForce;
     
     //Laser Config
+    public Color LaserColor;
     public float LaserSpeed;
     public bool InvincibleLaser;
     

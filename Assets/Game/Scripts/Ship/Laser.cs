@@ -21,9 +21,10 @@ namespace Ship
         private void Start()
         {
             _speed = _config.LaserSpeed;
+            GetComponentInChildren<SpriteRenderer>().color = _config.LaserColor;
             _rigidbody = GetComponent<Rigidbody2D>();
+            
             _lasers.Add(gameObject);
-            Debug.Log(" Amount Of Lasers: " + _lasers.Amount);
         }
 
         private void OnDestroy()

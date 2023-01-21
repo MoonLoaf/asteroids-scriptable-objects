@@ -8,7 +8,7 @@
         <ui:VisualElement name="Ship" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: auto; justify-content: flex-start; align-self: stretch; flex-shrink: 0; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
             <ui:Label tabindex="-1" text="Ship Configuration" display-tooltip-when-elided="true" name="ShipInfo" class="top-label" />
             <ui:Foldout text="Foldout" value="true" style="background-color: rgb(42, 42, 42);">
-                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ShipColor" binding-path="ShipColor" style="height: 19px; width: 336px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ShipColor" binding-path="ShipColor" style="height: auto; width: auto; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
                 <ui:SliderInt picking-mode="Ignore" label="Health" value="20" high-value="30" name="Health" show-input-field="true" inverted="false" direction="Horizontal" focusable="true" low-value="1" binding-path="Health" />
                 <ui:Slider picking-mode="Ignore" label="Throttle Power" value="10" high-value="100" name="Throttle" binding-path="ThrottleForce" show-input-field="true" />
                 <ui:Slider picking-mode="Ignore" label="Rotation Power" value="10" high-value="100" name="Rotation" binding-path="RotationForce" show-input-field="true" />
@@ -17,7 +17,7 @@
         <ui:VisualElement name="Asteroids" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: stretch; justify-content: flex-start; align-self: stretch; flex-direction: column; height: auto; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
             <ui:Label tabindex="-1" text="Asteroid Configuration" display-tooltip-when-elided="true" name="Asteroids" class="top-label" />
             <ui:Foldout text="Foldout" value="true" name="AsteroidFoldout">
-                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ColorField" binding-path="AsteroidColor" style="height: 22px; width: 336px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ColorField" binding-path="AsteroidColor" style="border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
                 <ui:SliderInt picking-mode="Ignore" label="Damage" value="42" high-value="5" name="Damage" show-input-field="true" binding-path="Damage" />
                 <ui:Label tabindex="-1" text="Force" display-tooltip-when-elided="true" name="Force" class="label sub-label" style="-unity-text-align: upper-center;" />
                 <ui:Slider picking-mode="Ignore" label="Minimum" value="50" high-value="50" name="Min" show-input-field="true" binding-path="MinForce" low-value="0.1" />
