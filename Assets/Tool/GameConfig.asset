@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01696aa4e2001341ae04d797f2b03b2, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  TimeLeft: 90
-  Damage: 2
-  AsteroidColor: {r: 1, g: 0, b: 0.77281, a: 1}
-  MinForce: 10
+  TimeLeft: 50
+  Damage: 1
+  AsteroidColor: {r: 0.9622642, g: 0.16664505, b: 0.06808472, a: 1}
+  MinForce: 9.8
   MaxForce: 0.1
-  MinSize: 0.4
-  MaxSize: 1.64
+  MinSize: 0.362
+  MaxSize: 1.39
   SizeThreshold: 0
-  ShipColor: {r: 0.41037738, g: 0.5244708, b: 1, a: 1}
-  Health: 21
-  MinTorque: 0.1
-  MaxTorque: 0.5
-  ThrottleForce: 5.85
-  RotationForce: 2.75
+  ShipColor: {r: 0.18111429, g: 0.28106755, b: 0.6981132, a: 1}
+  Health: 15
+  MinTorque: 0.268
+  MaxTorque: 1.003
+  ThrottleForce: 5.35
+  RotationForce: 2.88
+  LaserColor: {r: 1, g: 0, b: 0, a: 1}
   LaserSpeed: 0.29
   InvincibleLaser: 0
   SpawnLocationActive: 0

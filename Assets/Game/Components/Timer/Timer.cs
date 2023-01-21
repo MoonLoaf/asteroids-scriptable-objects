@@ -36,7 +36,7 @@ namespace Components
         {
             while (!_stopCoroutine)
             {
-                if (_timeLeft.CurrentValue == 0)
+                if (_timeLeft.CurrentValue == 0) 
                 {
                     _stopCoroutine = true;
                     _onGameOver.Raise();

@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <Style src="project://database/Assets/Tool/USS/GameManagerEditor.uss?fileID=7433441132597879392&amp;guid=733027f9d0945994f868d2cf339f638b&amp;type=3#GameManagerEditor" />
-    <ui:VisualElement name="Pane1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: flex-start; align-self: stretch; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
+    <ui:VisualElement name="Pane1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: flex-start; align-self: stretch; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; height: 837px;">
         <ui:VisualElement name="Game" style="align-self: stretch; justify-content: flex-start; align-items: stretch; height: auto; padding-bottom: 0; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
             <ui:Label tabindex="-1" text="Timer Configuration" display-tooltip-when-elided="true" name="Time" class="top-label" style="justify-content: space-around;" />
             <uie:PropertyField name="Timer" binding-path="TimeLeft" label="Timer Start Value" style="padding-bottom: 0; padding-top: 0; margin-top: 0; margin-bottom: 0; justify-content: space-between; align-self: stretch; border-top-width: 5px; border-bottom-width: 5px;" />
@@ -8,16 +8,19 @@
         <ui:VisualElement name="Ship" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: auto; justify-content: flex-start; align-self: stretch; flex-shrink: 0; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
             <ui:Label tabindex="-1" text="Ship Configuration" display-tooltip-when-elided="true" name="ShipInfo" class="top-label" />
             <ui:Foldout text="Foldout" value="true" style="background-color: rgb(42, 42, 42);">
-                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ShipColor" binding-path="ShipColor" style="height: auto; width: auto; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+                <ui:Label tabindex="-1" text="Hull" display-tooltip-when-elided="true" name="Hull" class="label sub-label" style="-unity-text-align: upper-center;" />
+                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ShipColor" binding-path="ShipColor" show-eye-dropper="false" style="height: auto; width: auto; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
                 <ui:SliderInt picking-mode="Ignore" label="Health" value="20" high-value="30" name="Health" show-input-field="true" inverted="false" direction="Horizontal" focusable="true" low-value="1" binding-path="Health" />
-                <ui:Slider picking-mode="Ignore" label="Throttle Power" value="10" high-value="100" name="Throttle" binding-path="ThrottleForce" show-input-field="true" />
-                <ui:Slider picking-mode="Ignore" label="Rotation Power" value="10" high-value="100" name="Rotation" binding-path="RotationForce" show-input-field="true" />
+                <ui:Label tabindex="-1" text="Engine" display-tooltip-when-elided="true" name="Engine" class="label sub-label" style="-unity-text-align: upper-center;" />
+                <ui:Slider picking-mode="Ignore" label="Throttle Power" value="10" high-value="10" name="Throttle" binding-path="ThrottleForce" show-input-field="true" />
+                <ui:Slider picking-mode="Ignore" label="Rotation Power" value="10" high-value="10" name="Rotation" binding-path="RotationForce" show-input-field="true" />
             </ui:Foldout>
         </ui:VisualElement>
         <ui:VisualElement name="Asteroids" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: stretch; justify-content: flex-start; align-self: stretch; flex-direction: column; height: auto; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
             <ui:Label tabindex="-1" text="Asteroid Configuration" display-tooltip-when-elided="true" name="Asteroids" class="top-label" />
-            <ui:Foldout text="Foldout" value="true" name="AsteroidFoldout">
-                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ColorField" binding-path="AsteroidColor" style="border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+            <ui:Foldout text="Foldout" value="false" name="AsteroidFoldout">
+                <ui:Label tabindex="-1" text="miscellaneous" display-tooltip-when-elided="true" name="miscellaneous" class="label sub-label" style="-unity-text-align: upper-center;" />
+                <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ColorField" binding-path="AsteroidColor" show-eye-dropper="false" style="border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
                 <ui:SliderInt picking-mode="Ignore" label="Damage" value="42" high-value="5" name="Damage" show-input-field="true" binding-path="Damage" />
                 <ui:Label tabindex="-1" text="Force" display-tooltip-when-elided="true" name="Force" class="label sub-label" style="-unity-text-align: upper-center;" />
                 <ui:Slider picking-mode="Ignore" label="Minimum" value="50" high-value="50" name="Min" show-input-field="true" binding-path="MinForce" low-value="0.1" />
@@ -36,7 +39,8 @@
         <ui:VisualElement name="Laser" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-items: stretch; justify-content: flex-start; align-self: stretch; flex-direction: column; height: auto; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
             <ui:Label tabindex="-1" text="Laser Configuration" display-tooltip-when-elided="true" name="Lasers" class="top-label" />
             <ui:Foldout text="Foldout" value="false">
-                <ui:Toggle label="Invincible Laser" binding-path="InvincibleLaser" />
+                <uie:ColorField label="Laser Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ColorField" binding-path="LaserColor" show-eye-dropper="false" style="border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+                <ui:Toggle label="Invincible Laser" binding-path="InvincibleLaser" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; -unity-font-style: bold; align-items: flex-end; justify-content: flex-start; flex-direction: row;" />
                 <ui:Slider picking-mode="Ignore" label="Laser Speed" value="0" high-value="1" binding-path="LaserSpeed" low-value="0.001" show-input-field="true" />
             </ui:Foldout>
         </ui:VisualElement>

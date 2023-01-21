@@ -14,13 +14,12 @@ public class CustomEditorGameConfig : Editor
     public GameConfig Config;
     private VisualElement _root;
 
-    
     private void OnEnable()
     {
         _root = new VisualElement();
         Config = AssetDatabase.LoadAssetAtPath<GameConfig>("Assets/Tool/GameConfig.asset");
-        var serializedObject = new SerializedObject(Config);
-        _root.Bind(serializedObject);
+        var SO = new SerializedObject(Config);
+        _root.Bind(SO);
     }
     
     public override VisualElement CreateInspectorGUI()
@@ -28,29 +27,26 @@ public class CustomEditorGameConfig : Editor
         UXML = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Tool/GameGonfig.uxml");
         UXML.CloneTree(_root);
 
-        // Get a reference to the slider from UXML and assign it its value.
         var sizeVisualElement = _root.Q<VisualElement>("SizeElement");
-        // var uxmlSlider = _root.Q<Slider>("SizeThreshold");
-        // uxmlSlider.value = 42.2f;
 
-        // Create a new slider, disable it, and give it a style class.
+        
+        //Size Threshold Slider
         var csharpSlider = new Slider("Size Threshold", Config.MinSize, Config.MaxSize);
         csharpSlider.SetEnabled(true);
         csharpSlider.AddToClassList("unity-base-slider");
-        //csharpSlider.value = uxmlSlider.value;
         csharpSlider.showInputField = true;
         
         sizeVisualElement.Add(csharpSlider);
 
-        // Mirror value of uxml slider into the C# field.
-        // uxmlSlider.RegisterCallback<ChangeEvent<float>>((evt) =>
-        // {
-        //     csharpSlider.value = evt.newValue;
-        // });
-
-        var foldout = new Foldout() { viewDataKey = "GameConfigFullInspectorFoldout", text = "Full Inspector" };
-        InspectorElement.FillDefaultInspector(foldout, serializedObject, this);
-        _root.Add(foldout);
+        //HelpBox for slider
+        var csharpHelpBox = new HelpBox("Asteroids larger than the size threshold will split when hit, if the slider goes outside the min/max size you may need to re-enter the inspector.", HelpBoxMessageType.Info);
+        csharpHelpBox.AddToClassList("unity-base-help-box");
+        sizeVisualElement.Add(csharpHelpBox);
+        
+        
+        // var foldout = new Foldout() { viewDataKey = "GameConfigFullInspectorFoldout", text = "Full Inspector" };
+        // InspectorElement.FillDefaultInspector(foldout, serializedObject, this);
+        // _root.Add(foldout);
         
         return _root;
     }
