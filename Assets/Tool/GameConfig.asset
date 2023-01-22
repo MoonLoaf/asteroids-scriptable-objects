@@ -18,7 +18,7 @@ MonoBehaviour:
   MinForce: 9.8
   MaxForce: 0.1
   MinSize: 0.362
-  MaxSize: 1.39
+  MaxSize: 1.41
   SizeThreshold: 0
   ShipColor: {r: 0.18111429, g: 0.28106755, b: 0.6981132, a: 1}
   Health: 15

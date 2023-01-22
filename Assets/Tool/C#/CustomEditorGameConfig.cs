@@ -24,7 +24,7 @@ public class CustomEditorGameConfig : Editor
     
     public override VisualElement CreateInspectorGUI()
     {
-        UXML = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Tool/GameGonfig.uxml");
+        UXML = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Tool/UXML/GameConfig.uxml");
         UXML.CloneTree(_root);
 
         var sizeVisualElement = _root.Q<VisualElement>("SizeElement");

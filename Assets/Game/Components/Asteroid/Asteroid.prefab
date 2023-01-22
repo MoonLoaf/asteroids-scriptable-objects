@@ -51,6 +51,7 @@ MonoBehaviour:
   _onLargeDestroyed: {fileID: 11400000, guid: ce1c775a49d326d43b307d6c6901dc67, type: 2}
   Config: {fileID: 11400000, guid: 511db32cd46667547ac096e37696c931, type: 2}
   _shape: {fileID: 1524412162417054026}
+  _explosion: {fileID: 0}
   IsSplit: 0
 --- !u!50 &1784223117350305362
 Rigidbody2D:

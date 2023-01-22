@@ -95,4 +95,10 @@
 .unity-base-help-box {
     margin-bottom: 5px;
     font-size: 14px;
+    text-overflow: clip;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
 }

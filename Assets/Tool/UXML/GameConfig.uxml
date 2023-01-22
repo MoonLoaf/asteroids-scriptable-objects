@@ -7,7 +7,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="Ship" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: auto; justify-content: flex-start; align-self: stretch; flex-shrink: 0; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
             <ui:Label tabindex="-1" text="Ship Configuration" display-tooltip-when-elided="true" name="ShipInfo" class="top-label" />
-            <ui:Foldout text="Foldout" value="true" style="background-color: rgb(42, 42, 42);">
+            <ui:Foldout text="Foldout" value="false" style="background-color: rgb(42, 42, 42);">
                 <ui:Label tabindex="-1" text="Hull" display-tooltip-when-elided="true" name="Hull" class="label sub-label" style="-unity-text-align: upper-center;" />
                 <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="ShipColor" binding-path="ShipColor" show-eye-dropper="false" style="height: auto; width: auto; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
                 <ui:SliderInt picking-mode="Ignore" label="Health" value="20" high-value="30" name="Health" show-input-field="true" inverted="false" direction="Horizontal" focusable="true" low-value="1" binding-path="Health" />
