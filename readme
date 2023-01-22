@@ -1,0 +1,11 @@
+The tool I have created is a mixture of UI builder and some custom made elements in c#. It is made to make the process of playtesting and balancing easier
+
+It can be accessed and tinkered with in Assets/Game/Tool/GameConfig.asset
+
+The tool itself is a custom inspector for a ScriptableObject called GameConfig, which contains several variables affecting different aspects of the game.
+
+Some of the variables work as initial values for scriptable variables such as health and time. Variables like these exist in form of assets within the components folder
+but all variables affecting gameplay should be changed within the overall configuration.
+
+The config itself can also be created as a new asset but in case you want several config assets to choose from you would need to replace the config in each gameObject/prefab
+with a reference to it.
